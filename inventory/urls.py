@@ -4,8 +4,7 @@ from . import views, api
 app_name = 'inventory'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('gudang/<int:pk>/', views.gudang_detail, name='gudang_detail'),
+    path('', views.gudang_list, name='gudang_list'),
     #Gudang CRUD
     path('gudang/', views.gudang_list, name="gudang_list"),
     path('gudang/create/', views.gudang_create, name="gudang_create"),
