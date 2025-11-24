@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Pembelian</title>
+</head>
+<body>
+    <h1>Daftar Pembelian</h1>
+
+    <a href="/pembelian/create/">Tambah Pembelian</a>
+    <table border="1">
+        <tr>
+            <th>Nomor</th>
+            <th>Tanggal</th>
+            <th>Gudang</th>
+            <th>Total</th>
+            <th>Aksi</th>
+        </tr>
+
+        {% for p in data %}
+        <tr>
+            <td>{{ p.nomor }}</td>
+            <td>{{ p.tanggal }}</td>
+            <td>{{ p.gudang.name }}</td>
+            <td>{{ p.total }}</td>
+            <td>
+                <a href="/pembelian/update/{{ g.id }}/">Edit</a> |
+                <a href="/pembelian/delete/{{ g.id }}/">Hapus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/gudang/">Kembali ke Gudang</a>
+</body>
+</html>

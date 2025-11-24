@@ -1,0 +1,10 @@
+<h1>Form Pembelian</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Simpan</button>
+</form>
+
+<a href="/gudang/">Kembali</a>

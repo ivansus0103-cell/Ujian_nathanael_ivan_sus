@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Pesanan</title>
+</head>
+<body>
+    <h1>Daftar Pesanan</h1>
+
+    <a href="/pesanan/create/">Tambah Pesanan</a>
+    <table border="1">
+        <tr>
+            <th>Nomor</th>
+            <th>Tanggal</th>
+            <th>Gudang</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+
+        {% for x in data %}
+        <tr>
+            <td>{{ x.nomor }}</td>
+            <td>{{ x.tanggal }}</td>
+            <td>{{ x.gudang.name }}</td>
+            <td>{{ x.total }}</td>
+            <td>{{ x.status }}</td>
+            <td>
+                <a href="/pesanan/update/{{ g.id }}/">Edit</a> |
+                <a href="/pesanan/delete/{{ g.id }}/">Hapus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/gudang/">Kembali ke Gudang</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Gudang</title>
+</head>
+<body>
+    <h1>Daftar Gudang</h1>
+
+    <a href="/gudang/create/">Tambah Gudang</a>
+    <table border="1">
+        <tr>
+            <th>Nama Gudang</th>
+            <th>Alamat</th>
+            <th>Aksi</th>
+        </tr>
+
+        {% for g in data %}
+        <tr>
+            <td>{{ g.name }}</td>
+            <td>{{ g.alamat }}</td>
+            <td>
+                <a href="/gudang/update/{{ g.id }}/">Edit</a> |
+                <a href="/gudang/delete/{{ g.id }}/">Hapus</a>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/pembelian/">Lihat Pembelian</a> | 
+    <a href="/pesanan/">Lihat Pesanan</a>
+</body>
+</html>
