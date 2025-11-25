@@ -2,15 +2,15 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Gudang, Produk, Pembelian, Pesanan
 from .forms import GudangForm, PembelianForm, PesananForm
 
-def index(request):
-    return render(request, 'inventory/index.html', {
-        'gudangs': Gudang.objects.all(),
-        'produks': Produk.objects.all(),
-    })
+# def index(request):
+#     return render(request, 'inventory/index.html', {
+#         'gudangs': Gudang.objects.all(),
+#         'produks': Produk.objects.all(),
+#     })
 
-def gudang_detail(request, pk):
-    g = get_object_or_404(Gudang, pk=pk)
-    return render(request, 'inventory/gudang_detail.html', {'gudang': g})
+# def gudang_detail(request, pk):
+#     g = get_object_or_404(Gudang, pk=pk)
+#     return render(request, 'inventory/gudang_detail.html', {'gudang': g})
 
 def gudang_list(request):
     data = Gudang.objects.all()

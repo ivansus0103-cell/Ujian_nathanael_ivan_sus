@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Gudang, Pembelian, Pesanan
+from .models import Gudang, Pembelian, Pesanan, Produk
 
 class GudangSerializer(serializers.ModelSerializer):
     class Meta:

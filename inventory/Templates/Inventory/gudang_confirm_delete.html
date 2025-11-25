@@ -1,6 +1,6 @@
 <h2>Yakin ingin menghapus "{{ obj }}" ?</h2>
 
-<form method="POST">
+<form method="DELETE">
     {% csrf_token %}
     <button type="submit">Hapus</button>
 </form>
